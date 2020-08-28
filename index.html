@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description"
+        content="Tagore International School, Vasant Vihar's entry for COЯE 13 creative event. (╯°□°）╯︵ ┻━┻">
+    <meta name="keywords" content="">
+    <meta name="author" content="Pyrotech Club">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis&family=Open+Sans&family=Poiret+One&family=Raleway&display=swap&family=Poppins:wght@500&family=Nunito+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="fullpage.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.min.css" />
+    <link rel="icon" href="lib/favicon.png" sizes="26x26" type="image/png">
+    <link href='main.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <title></title>
+</head>
+
+<body onload="show()">
+
+    <div class="load" id="load">
+        <center>
+            <div class="loader-wheel">
+            </div>
+        </center>
+    </div>
+
+    <!--- DARK MODE SWITCH --->
+
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+                <center>
+                    <img src="lib/sun.png" class="sun">
+                    <img src="lib/moon.png" class="moon">
+                </center>
+            </div>
+        </label>
+    </div>
+
+    <!-- FULLPAGE -->
+
+    <div id="fullpage">
+
+        <!-- HOME -->
+
+        <section class="section text-black" id="home">
+            <div class="fp-bg"></div>
+            <div class="row contents heading">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 align-center">
+                    <img src="lib/logo.svg">
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+
+        <section class="section" id="about">
+            <div class="row contents">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 align-left">
+                    <h1 class="section-title align-center">VoterFlux</h1>
+                    <br>
+                    <p class="section-quote">
+                        Voting right from the comfort and safety of your home
+                    </p>
+                    <p class="section-text">
+                        VoterFlux is an innovative alternate solution to in-person voting and mail-in ballots. In the
+                        light of the drastically changed unprecedented conditions due to this pandemic,
+                    </p>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+
+        <section class="section fp-auto-height" id="footer">
+            <div class="row contents">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 align-center">
+                    <div class="footer-text">
+                        <div class="footer-copy font-alt">
+                            <br><br><br>
+                        </div>
+                        <big>
+                            <p class="footer-made"> Made By: Naman Chandok, Namya Chhabra, Shaivi Shewaramani and Aneira
+                                Shewaramani</p>
+                        </big>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script type="text/javascript" src="fontawesome.js"></script>
+    <script type="text/javascript" src="fullpage.js"></script>
+    <script type="text/javascript" src="scrolloverflow.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+        // FULLPAGE
+
+        var myFullpage = new fullpage('#fullpage', {
+            navigation: true,
+            scrollOverflow: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['Home', 'About Us'],
+            sectionsColor: ['var(--overlay-color)', 'var(--bg-color)', 'var(--light-bg-color)']
+        });
+
+        // LOADER
+
+        var myVar;
+
+        function show() {
+            myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.getElementById("load").style.transform = "translateY(-200vh)";
+        }
+
+        // DARK MODE
+
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+
+        // SAVE PREFERENCE TO LOCAL STORAGE
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // CHECK LOCAL STORAGE FOR PREFERENCE
+
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<!--
+   ____     ____
+   |   \    |   \     |     |   |    |
+   | |\ \   | |\ \    |     |   |    |
+   | |/ /   | |/ /    |     |   |    |
+   |   /    |___/     |     |   |____|
+   |   \    |   \     |     |   |    |
+   | |\ \   |    \    |     |   |    |
+   | |/ /   |     \   |     |   |    |
+   |___/    |      \  \_____/   |    | 
+-->
