@@ -1,8 +1,6 @@
 :root {
-    --primary-color: rgba(74, 29, 130, 0.9);
-    --primary-color-half: rgba(74, 29, 130, 0.7);
-    --secondary-color: rgba(239, 133, 18, 0.9);
-    --secondary-color-half: rgba(239, 133, 18, 0.5);
+    --primary-color: #03009b;
+    --secondary-color: #B22234;
     --lighter-bg-color: #eee;
     --nav-half-bg-color: rgba(255, 255, 255, 0.6);
     --font-color: #000;
