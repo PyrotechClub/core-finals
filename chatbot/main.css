@@ -1,0 +1,124 @@
+:root {
+    --primary-color: rgba(74, 29, 130, 0.9);
+    --primary-color-half: rgba(74, 29, 130, 0.7);
+    --secondary-color: rgba(239, 133, 18, 0.9);
+    --secondary-color-half: rgba(239, 133, 18, 0.5);
+    --lighter-bg-color: #eee;
+    --nav-half-bg-color: rgba(255, 255, 255, 0.6);
+    --font-color: #000;
+    --bg-color: #fff;
+    --switch-bg-color: rgba(0, 0, 0, 0.15);
+    --loader-bg-color: #ffffff;
+    --overlay-color: rgba(255, 255, 255, 0.1);
+    --scroll-bg-color: #eee;
+    --scroll-fg-color: #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none !important;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html {
+    margin: 0;
+    scroll-behavior: smooth !important; 
+}
+
+::scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::scrollbar-track {
+    background-color: var(--scroll-bg-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scroll-bg-color);
+}
+
+::scrollbar-thumb {
+    background-color: var(--scroll-fg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-fg-color);
+}
+
+::-moz-selection {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+::-webkit-selection {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+::selection {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+input#message {
+    border: transparent solid 2px;
+    border-bottom-color: var(--primary-color);
+    padding: 10px;
+    width: 80%;
+    transition: 0.25s;
+    margin: 10px auto;
+    background: none;
+    color: var(--font-color);
+}
+
+#submit {
+    border: var(--primary-color) solid 2px;
+    color: var(--font-color);
+    background: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: 0.5s;
+    margin: 5px auto;
+}
+
+#submit:hover{
+    background: var(--primary-color);
+    color: #fff;
+}
+
+input#message:focus-within {
+    border: transparent solid 2px;
+    border-bottom-color: var(--secondary-color);
+    width: 90%;
+}
+
+.bruhhh {
+    padding-top: 10%;
+    text-align:center;
+}
+
+.chatbox {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+}
+
+p.bottext {
+    text-align: left;
+    color: var(--secondary-color);
+}
+
+p#invitext {
+    text-align: right;
+    color: var(--primar-color);
+}
