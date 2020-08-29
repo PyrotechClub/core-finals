@@ -16,6 +16,7 @@
     --sun: none;
     --logo: url('lib/logo-blc.png');
     --invert: invert(0%);
+    --loadlogo: url('lib/load_logo_blc.png');
 }
 
 [data-theme="dark"] {
@@ -33,6 +34,7 @@
     --sun: block;
     --logo: url('lib/logo-wht.png');
     --invert: invert(100%);
+    --loadlogo: url('lib/load_logo_wht.png');
 }
 
 /* PREREQUISITES */
@@ -128,6 +130,57 @@ a:hover {
 }
 
 
+/* LOADER */
+
+.load {
+    height: 100%;
+    width: 100%;
+    background-color: var(--loader-bg-color);
+    padding-top: 17%;
+    z-index: 999999;
+    position: fixed;
+    transition: 1s ease-out;
+    text-align: center;
+}
+
+.loader-wheel {
+    display: block;
+    position: relative;
+    background-image: var(--loadlogo);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 250px;
+    animation: scale 1.5s linear infinite;
+}
+
+.loader-wheel:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--font-color);
+    ;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    animation: spin 1.5s linear infinite;
+}
+
+.loader-wheel::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+}
 /* DARK MODE SWITCH */
 
 .theme-switch-wrapper {
@@ -317,3 +370,92 @@ a:hover {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@-moz-keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@-o-keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes scale {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes scale {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+@-o-keyframes scale {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
