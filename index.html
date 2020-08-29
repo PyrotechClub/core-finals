@@ -16,8 +16,9 @@
     <link rel="stylesheet" type="text/css" href="fullpage.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.min.css" />
-    <link rel="icon" href="lib/favicon.png" sizes="26x26" type="image/png">
+    <link rel="icon" href="lib/load_logo_blc.png" sizes="26x26" type="image/png">
     <link href='main.css' rel='stylesheet' type='text/css'>
+    <link href='chat.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <title>VoterFlux</title>
 </head>
@@ -48,7 +49,26 @@
     <!-- FULLPAGE -->
 
     <div id="fullpage">
+        
+    <!--MODALS-->
+    <div class="modals">
+        <div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 bruhhh">
+                     <div class="chatbox">
+                     <p class="bottext">hello</p>
+                     <p id="invitext"></p>
+                </div>
 
+                <input id="message" placeholder="Ask Away!" type="text"></input> <br />
+                <button id="submit">Send</button>
+
+            </div>
+             <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
         <!-- HOME -->
 
         <div class="section text-black" id="home">
@@ -141,6 +161,17 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="head-info">
+                                        <img src="lib/shewaramani-ii.jpeg" class="head-img">
+                                        <div class="head-text">
+                                            <h4>Aneira Shewaramani</h4>
+                                            <h5>CEO</h5>
+                                            <hr class="heads-hr">
+                                            <p><i class="fas fa-envelope"></i> aneira2310@gmail.com<br><br></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="head-info">
                                         <img src="lib/shewaramani.jpeg" class="head-img">
                                         <div class="head-text">
                                             <h4>Shaivi Shewaramani</h4>
@@ -150,6 +181,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="head-info">
                                         <img src="lib/hallo.jpeg" class="head-img">
@@ -161,8 +194,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
+                            
                                 <div class="col-md-6">
                                     <div class="head-info">
                                         <img src="lib/hanuman.jpg" class="head-img">
@@ -174,20 +206,23 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="head-info">
-                                        <img src="lib/shewaramani-ii.jpeg" class="head-img">
-                                        <div class="head-text">
-                                            <h4>Aneira Shewaramani</h4>
-                                            <h5>CEO</h5>
-                                            <hr class="heads-hr">
-                                            <p><i class="fas fa-envelope"></i> aneira2310@gmail.com<br><br></p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </center>
                     </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+
+        <div class="section" id="help">
+            <div class="row contents">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 align-left">
+                    <h1 class="section-title align-center fp-auto-height">Need Help?</h1>
+                    <br>
+                    <h1>
+                        Talk to our Chatbot <span data-toggle="modal" data-target="#modal">Here.</span>
+                    </h1>
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -292,6 +327,244 @@
                 toggleSwitch.checked = true;
             }
         }
+    </script>
+    <script>
+        
+// KEYWORD BANK
+
+const HELLO = ["HI", "HEY", "SUP", "HELLO", "BONJOUR"]
+
+const GOODBYE = ["BYE", "SEE YOU LATER", "GOTTA GO", "ADIOS", "SAYONARA", "BBIE", "BIE"]
+
+const GREETINGS = ["WHATS UP", "HOW ARE YOU", "MORNING", "AFTERNOON", "EVENING", "SLEEP", "GOOD"];
+
+const NAME = ["WHO ARE YOU", "CODED", "PROGRAMMED","YOUR NAME"]
+
+const HOW = ["HOW", "WORK", "PLAN"]
+
+const WHAT = ["WHAT", "WHATS", "IS VOTERFLUX"]
+
+const BRUH = ["BRUH"]
+
+//bot bruh words
+
+
+
+// onclick submit function 
+
+$("#submit").click(function(){
+    //get message
+    var message = document.getElementById("message").value;
+    console.log(message);
+
+    //show message
+    var para = document.createElement("p");
+    var text = document.createTextNode(message);
+    para.className = "userMsg";
+    para.appendChild(text);
+    var invitext = document.getElementById("invitext");
+    invitext.append(para);
+
+
+    //interpret the message
+    var message = message.toUpperCase();
+    /* if(message.includes(HELLO)){
+        console.log("bruh yes")
+    } */
+    var bro = message.replace(" ", ";");
+    var words = bro.split(";");
+
+
+    function findCommonElementhello(array1, array2) { 
+	
+        // Loop for array1 
+        for(let i = 0; i < array1.length; i++) { 
+            
+            // Loop for array2 
+            for(let j = 0; j < array2.length; j++) { 
+                
+                // Compare the element of each and 
+                // every element from both of the 
+                // arrays 
+                if(array1[i] === array2[j]) { 
+                
+                    // Return if common element found 
+                    var para = document.createElement("p");
+                    var text = document.createTextNode("Hi there!");
+                    para.className = "bottext";
+                    para.appendChild(text);
+                    var invitext = document.getElementById("invitext");
+                    invitext.append(para); 
+                } 
+            } 
+        } //CHAMAN IT WORKS NOW!!:) yayayayaayaya :)
+    } 
+
+    function findCommonElementbye(array1, array2) { 
+	
+        // Loop for array1 
+        for(let i = 0; i < array1.length; i++) { 
+            
+            // Loop for array2 
+            for(let j = 0; j < array2.length; j++) { 
+                
+                // Compare the element of each and 
+                // every element from both of the 
+                // arrays 
+                if(array1[i] === array2[j]) { 
+                
+                    // Return if common element found 
+                    var para = document.createElement("p");
+                    var text = document.createTextNode("Bbie then...");
+                    para.className = "bottext";
+                    para.appendChild(text);
+                    var invitext = document.getElementById("invitext");
+                    invitext.append(para); 
+                } 
+            } 
+        } //CHAMAN IT WORKS NOW!!:)
+    } 
+
+    function findCommonElementgreet(array1, array2) { 
+	
+        // Loop for array1 
+        for(let i = 0; i < array1.length; i++) { 
+            
+            // Loop for array2 
+            for(let j = 0; j < array2.length; j++) { 
+                
+                // Compare the element of each and 
+                // every element from both of the 
+                // arrays 
+                if(array1[i] === array2[j]) { 
+                
+                    // Return if common element found 
+                    var para = document.createElement("p");
+                    var text = document.createTextNode("I barely got made in time but i nice :)");
+                    para.className = "bottext";
+                    para.appendChild(text);
+                    var invitext = document.getElementById("invitext");
+                    invitext.append(para); 
+                } 
+            } 
+        } //CHAMAN IT WORKS NOW!!:)
+    } 
+
+    function findCommonElementname(array1, array2) { 
+	
+        // Loop for array1 
+        for(let i = 0; i < array1.length; i++) { 
+            
+            // Loop for array2 
+            for(let j = 0; j < array2.length; j++) { 
+                
+                // Compare the element of each and 
+                // every element from both of the 
+                // arrays 
+                if(array1[i] === array2[j]) { 
+                
+                    // Return if common element found 
+                    var para = document.createElement("p");
+                    var text = document.createTextNode("I am the Voterflux bot! Programmed with <3 by Hanuman :)");
+                    para.className = "bottext";
+                    para.appendChild(text);
+                    var invitext = document.getElementById("invitext");
+                    invitext.append(para); 
+                } 
+            } 
+        } //CHAMAN IT WORKS NOW!!:)
+    } 
+
+
+    function findCommonElementhow(array1, array2) { 
+	
+        // Loop for array1 
+        for(let i = 0; i < array1.length; i++) { 
+            
+            // Loop for array2 
+            for(let j = 0; j < array2.length; j++) { 
+                
+                // Compare the element of each and 
+                // every element from both of the 
+                // arrays 
+                if(array1[i] === array2[j]) { 
+                
+                    // Return if common element found 
+                    var para = document.createElement("p");
+                    var text = document.createTextNode("The technology behind VoterFlux relies on the power lines reaching the farthest corners of our nation. Electricity is a utility we can proudly say, every American has access to. So in such a scenario, why not use the most valuable asset we have which connects our country's furthest corners");
+                    para.className = "bottext";
+                    para.appendChild(text);
+                    var invitext = document.getElementById("invitext");
+                    invitext.append(para); 
+                } 
+            } 
+        } //CHAMAN IT WORKS NOW!!:)
+    } 
+
+    function findCommonElementwhat(array1, array2) { 
+	
+        // Loop for array1 
+        for(let i = 0; i < array1.length; i++) { 
+            
+            // Loop for array2 
+            for(let j = 0; j < array2.length; j++) { 
+                
+                // Compare the element of each and 
+                // every element from both of the 
+                // arrays 
+                if(array1[i] === array2[j]) { 
+                
+                    // Return if common element found 
+                    var para = document.createElement("p");
+                    var text = document.createTextNode("VoterFlux is an innovative alternate solution to in-person voting and mail-in ballots. In the light of the drastically changed unprecedented conditions due to this pandemic, we present to you an easy alternate to the  stated problem.");
+                    para.className = "bottext";
+                    para.appendChild(text);
+                    var invitext = document.getElementById("invitext");
+                    invitext.append(para); 
+                } 
+            } 
+        } //CHAMAN IT WORKS NOW!!:)
+    } 
+
+    function findCommonElementbruh(array1, array2) { 
+	
+        // Loop for array1 
+        for(let i = 0; i < array1.length; i++) { 
+            
+            // Loop for array2 
+            for(let j = 0; j < array2.length; j++) { 
+                
+                // Compare the element of each and 
+                // every element from both of the 
+                // arrays 
+                if(array1[i] === array2[j]) { 
+                
+                    // Return if common element found 
+                    var para = document.createElement("p");
+                    var text = document.createTextNode("/bruh.jpg");
+                    para.className = "bottext";
+                    para.appendChild(text);
+                    var invitext = document.getElementById("invitext");
+                    invitext.append(para); 
+                } 
+            } 
+        } //CHAMAN IT WORKS NOW!!:)
+    } 
+
+    
+
+    findCommonElementhello(words, HELLO);
+    findCommonElementbye(words, GOODBYE);
+    findCommonElementgreet(words, GREETINGS);
+    findCommonElementname(words, NAME);
+    findCommonElementhow(words, HOW);
+    findCommonElementhow(words, WHAT);
+    findCommonElementbruh(words, BRUH);
+
+
+
+
+})
     </script>
 </body>
 
